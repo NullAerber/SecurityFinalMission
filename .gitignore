@@ -1,0 +1,9 @@
+LSTM/build/
+LSTM/data/*
+LSTM/!dev-access.csv
+LSTM/logs/
+LSTM/securitai-lstm-model.h5
+LSTM/securitai-lstm-model.json
+LSTM/securitai-lstm-model_metadata.json
+LSTM/securitai-lstm-model_weights.buf
+LSTM/securitai-lstm-weights.h5
