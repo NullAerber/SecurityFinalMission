@@ -1,4 +1,3 @@
-
 # coding: utf-8
 
 # In[1]:
@@ -15,7 +14,6 @@ import pickle
 import urllib
 import time
 
-
 # 各十条数据作为例子分析
 # 输入参数部分
 good = 'data/good_fromE.txt'
@@ -31,19 +29,16 @@ n = 2
 use_k = True
 
 
-
-
 def printT(word):
     a = time.strftime('%Y-%m-%d %H:%M:%S: ', time.localtime(time.time()))
-    print(a+str(word))
+    print(a + str(word))
 
 
 # return[good,bad]
 def getdata():
-
-    with open(good,'r') as f:
+    with open(good, 'r') as f:
         good_query_list = [i.strip('\n') for i in f.readlines()[:]]
-    with open(bad,'r') as f:
+    with open(bad, 'r') as f:
         bad_query_list = [i.strip('\n') for i in f.readlines()[:]]
     return [good_query_list, bad_query_list]
 
@@ -62,16 +57,16 @@ class Baseframe(object):
 
     def getname(self):
         return 'baseframe'
-    
+
     def Train(self):
 
-        printT('读入数据，good：'+good+' bad:'+bad)
+        printT('读入数据，good：' + good + ' bad:' + bad)
         data = getdata()
-        printT('done, good numbers:'+str(len(data[0]))+' bad numbers:'+str(len(data[1])))
+        printT('done, good numbers:' + str(len(data[0])) + ' bad numbers:' + str(len(data[1])))
         # 打标记
         good_y = [0 for i in range(len(data[0]))]
         bad_y = [1 for i in range(len(data[1]))]
-        
+
         y = good_y + bad_y
 
         #     向量化
@@ -80,8 +75,8 @@ class Baseframe(object):
         # 把不规律的文本字符串列表转换成规律的 ( [i,j],weight) 的矩阵X [url条数，分词总类的总数，理论上少于256^n] 
         # i表示第几条url，j对应于term编号（或者说是词片编号）
         # 用于下一步训练分类器 lgs
-        X = self.vectorizer.fit_transform(data[0]+data[1])
-        printT('向量化后维度：'+str(X.shape))
+        X = self.vectorizer.fit_transform(data[0] + data[1])
+        printT('向量化后维度：' + str(X.shape))
         # 通过kmeans降维 返回降维后的矩阵
         if use_k:
             X = self.transform(self.kmeans(X))
@@ -99,20 +94,20 @@ class Baseframe(object):
         self.classifier.fit(X_train, y_train)
 
         # 使用测试值 对 模型的准确度进行计算
-        printT(self.getname()+'模型的准确度:{}'.format(self.classifier.score(X_test, y_test)))
-        
+        printT(self.getname() + '模型的准确度:{}'.format(self.classifier.score(X_test, y_test)))
+
         #         保存训练结果
-        with open('model/'+self.getname()+'.pickle', 'wb') as output:
+        with open('model/' + self.getname() + '.pickle', 'wb') as output:
             pickle.dump(self, output)
 
     # 对新的请求列表进行预测
     def predict(self, new_queries):
         try:
-            with open('model/'+self.getname()+'.pickle', 'rb') as input:
+            with open('model/' + self.getname() + '.pickle', 'rb') as input:
                 self = pickle.load(input)
-            printT('loading '+self.getname()+'model success')
+            printT('loading ' + self.getname() + 'model success')
         except FileNotFoundError:
-            printT('start to train the '+self.getname()+' model')
+            printT('start to train the ' + self.getname() + ' model')
             self.Train()
         printT('start predict:')
         #         解码
@@ -129,24 +124,23 @@ class Baseframe(object):
 
         result[0] = []
         result[1] = []
-        
+
         #         两个列表并入一个元组列表
         for q, r in zip(new_queries, res):
             result[r].append(q)
 
-        printT('good query: '+str(len(result[0])))
-        printT('bad query: '+str(len(result[1])))
+        printT('good query: ' + str(len(result[0])))
+        printT('bad query: ' + str(len(result[1])))
         # printT("预测的结果列表:{}".format(str(result)))
-        
+
         return result
-    
-    
-# tokenizer function, this will make 3 grams of each query
+
+    # tokenizer function, this will make 3 grams of each query
     def get_ngrams(self, query):
         tempQuery = str(query)
         ngrams = []
-        for i in range(0, len(tempQuery)-n):
-            ngrams.append(tempQuery[i:i+n])
+        for i in range(0, len(tempQuery) - n):
+            ngrams.append(tempQuery[i:i + n])
         return ngrams
 
     def kmeans(self, weight):
@@ -167,7 +161,7 @@ class Baseframe(object):
 
             printT('Start Kmeans ')
 
-            clf = KMeans(n_clusters=k, precompute_distances=False )
+            clf = KMeans(n_clusters=k, precompute_distances=False)
 
             s = clf.fit(weight)
             printT(s)
@@ -209,15 +203,15 @@ class Baseframe(object):
         # print(row)
         # print(col)
         # print(data)
-        newWeight = coo_matrix((data, (row, col)), shape=(k,weight.shape[1]))
+        newWeight = coo_matrix((data, (row, col)), shape=(k, weight.shape[1]))
         return newWeight.transpose()
 
 
 class LG(Baseframe):
     def getname(self):
         if use_k:
-            return 'LG__n'+str(n)+'_k'+str(k)
-        return 'LG_n'+str(n)
+            return 'LG__n' + str(n) + '_k' + str(k)
+        return 'LG_n' + str(n)
 
     def __init__(self):
         # 定理逻辑回归方法模型
@@ -228,11 +222,9 @@ class SVM(Baseframe):
 
     def getname(self):
         if use_k:
-            return 'SVM__n'+str(n)+'_k'+str(k)
-        return 'SVM_n'+str(n)
+            return 'SVM__n' + str(n) + '_k' + str(k)
+        return 'SVM_n' + str(n)
 
     def __init__(self):
         # 定理逻辑回归方法模型
         self.classifier = svm.SVC()
-
-

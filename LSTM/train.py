@@ -1,16 +1,15 @@
-import sys
-import os
 import json
-import pandas
-import numpy as np
 import optparse
+import os
+from collections import OrderedDict
+
+import pandas
 from keras.callbacks import TensorBoard
-from keras.models import Sequential
 from keras.layers import LSTM, Dense, Dropout
 from keras.layers.embeddings import Embedding
+from keras.models import Sequential
 from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer
-from collections import OrderedDict
 
 
 def train(csv_file):
@@ -45,7 +44,7 @@ def train(csv_file):
     tokenizer.fit_on_texts(X)
 
     # 保存字典，若此字典不存在则创建
-    word_dict_file = 'build/word-dictionary.json'
+    word_dict_file = './build/word-dictionary.json'
     if not os.path.exists(os.path.dirname(word_dict_file)):
         os.makedirs(os.path.dirname(word_dict_file))
     with open(word_dict_file, 'w') as outfile:

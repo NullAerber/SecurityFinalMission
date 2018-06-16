@@ -1,5 +1,5 @@
-
 import IDS
+
 # In[7]:
 # testfile = 'data/good_fromE2.txt'
 testfile = 'data/bad_fromE.txt'
@@ -13,11 +13,10 @@ a = IDS.SVM()
 # print('正常结果 前10条 ' + str(result[0][:10]))
 
 
-
 with open(testfile, 'r') as f:
-    print('预测数据集： '+testfile)
+    print('预测数据集： ' + testfile)
     preicdtlist = [i.strip('\n') for i in f.readlines()[:]]
     result = a.predict(preicdtlist)
-    print('恶意结果 前10条'+str(result[1][:10]))
+    print('恶意结果 前10条' + str(result[1][:10]))
     print('正常结果 前10条 ' + str(result[0][:10]))
     pass

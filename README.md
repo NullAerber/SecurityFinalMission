@@ -31,6 +31,9 @@ goodqueries 来源于网上数据
 
 # Sequence Classification
 
+0 =正常请求日志样本
+1 =请求日志表示尝试的注入攻击
+
 画一个流程图
 LSTM神经网络图
 
