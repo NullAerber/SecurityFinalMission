@@ -31,5 +31,19 @@ goodqueries 来源于网上数据
 
 # Sequence Classification
 
+画一个流程图
+LSTM神经网络图
+
+paper：Adam: A Method for Stochastic Optimization
+
 https://medium.com/slalom-engineering/detecting-malicious-requests-with-keras-tensorflow-5d5db06b4f28
 https://zhuanlan.zhihu.com/p/29768996
+
+http://keras-cn.readthedocs.io/en/latest/getting_started/sequential_model/
+http://keras-cn.readthedocs.io/en/latest/models/sequential/#sequential
+http://keras-cn.readthedocs.io/en/latest/layers/embedding_layer/#embedding_1
+http://deeplearning.net/tutorial/lstm.html
+对数损失函数
+https://blog.csdn.net/saltriver/article/details/63683092
+https://www.zhihu.com/question/27126057
+http://www.360doc.com/content/18/0301/04/52389397_733320586.shtml
