@@ -1,5 +1,4 @@
 LSTM/build/
-LSTM/data/*
 LSTM/!dev-access.csv
 LSTM/logs/
 LSTM/securitai-lstm-model.h5

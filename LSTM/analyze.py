@@ -6,11 +6,11 @@ import optparse
 def analyze(csv_file):
     dataframe = pandas.read_csv(csv_file, engine='python', quotechar='|', header=None)
     count_frame = dataframe.groupby([1]).count()
-    print(count_frame)
+    print('Positve(0):'+ str(count_frame[0][0]))
+    print('Negative(1):' + str(count_frame[0][1]))
     total_req = count_frame[0][0] + count_frame[0][1]
-    num_malicious = count_frame[0][1]
 
-    print("Malicious request logs in dataset: {:0.2f}%".format(float(num_malicious) / total_req * 100))
+    print("Malicious request logs in dataset: {:0.2f}%".format(float(count_frame[0][1]) / total_req * 100))
 
 if __name__ == '__main__':
     parser = optparse.OptionParser()
