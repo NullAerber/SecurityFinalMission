@@ -27,24 +27,30 @@ def predict(csv_file):
     dataset = dataframe.values
 
     # 预处理
-    test = dataset[:, 0]
-    for index, item in enumerate(test):
+    test_x = dataset[:, 0]
+    test_y = dataset[:, 1]
+    for index, item in enumerate(test_x):
         reqJson = json.loads(item, object_pairs_hook=OrderedDict)
         del reqJson['timestamp']
         del reqJson['headers']
         del reqJson['source']
         del reqJson['route']
         del reqJson['responsePayload']
-        test[index] = json.dumps(reqJson, separators=(',', ':'))
+        test_x[index] = json.dumps(reqJson, separators=(',', ':'))
 
-    test = tokenizer.texts_to_sequences(test)
-    test_process = sequence.pad_sequences(test, maxlen=1024)
+    test_x = tokenizer.texts_to_sequences(test_x)
+    test_process = sequence.pad_sequences(test_x, maxlen=1024)
 
     model = load_model('securitai-lstm-model.h5')
     model.load_weights('securitai-lstm-weights.h5')
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-    prediction = model.predict(test_process)
 
+    # 评估结果
+    score, acc = model.evaluate(test_process, test_y, verbose=1, batch_size=128)
+    print("Model Accuracy: {:0.2f}%".format(acc * 100))
+    print('score: ' + str(score))
+
+    prediction = model.predict(test_process)
     with open("vali_dev_output.csv", 'w') as output:
         output.write('predict,real,url\n')
         for i in range(len(prediction)):

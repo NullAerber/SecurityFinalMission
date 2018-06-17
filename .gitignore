@@ -7,3 +7,7 @@ LSTM/securitai-lstm-model_metadata.json
 LSTM/securitai-lstm-model_weights.buf
 LSTM/securitai-lstm-weights.h5
 LSTM/*.csv
+
+
+BinaryClassification/model
+BinaryClassification/predict.csv

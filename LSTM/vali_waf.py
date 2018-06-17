@@ -42,10 +42,10 @@ def predict(goodqueries, badqueries):
     # 评估结果
     score, acc = model.evaluate(X_processed, Y_waf, verbose=1, batch_size=128)
     print("Model Accuracy: {:0.2f}%".format(acc * 100))
-    print('score: ' + str(score))
+    print('Model Score: ' + str(score))
 
+    # 预测结果
     prediction = model.predict(X_processed)
-
     with open("vali_waf_output.csv",'w') as output:
         output.write('predict,real,url\n')
         for i in range(len(prediction)):
@@ -58,8 +58,8 @@ if __name__ == '__main__':
     parser.add_option('-b', '--bad', action="store", dest="bad", help="bad queries file")
     options, args = parser.parse_args()
 
-    good_file = 'data/goodqueries.txt'
-    bad_file = 'data/badqueries.txt'
+    good_file = 'data/good_waf.txt'
+    bad_file = 'data/bad_waf.txt'
 
     if options.good is not None:
         good_file = options.good
