@@ -2,7 +2,7 @@
 
 ## 环境
 
-> Python 环境： 3.5
+> Python 环境： 3.6
 
 ## 说明
 该项目是课程大作业，只具有实践复现效果，底层理论知识不提供。
@@ -14,7 +14,11 @@
 本项目相关具体介绍请[下载报告](https://github.com/NullAerber/SecurityFinalMission/paper.pdf)
 
 ## 数据集
-本项目一共有三大类数据集
+本项目一共有三大类数据集，其中：
+
+0 =正常请求日志样本
+
+1 =请求日志表示尝试的注入攻击
 
 bad_waf.txt,good_waf.txt:来自于[FWaf项目](https://github.com/faizann24/Fwaf-Machine-Learning-driven-Web-Application-Firewall)
 
@@ -62,31 +66,48 @@ $ python BinaryClassification/train.py [options]
 .pickle文件是训练后的模型
 
 ### 实验结果
-训练即均是默认训练集：
+训练均是默认训练集：
 
-good = './BinaryClassification/data/good1.txt'
+good = './BinaryClassification/data/good_waf.txt'
 
-bad = './BinaryClassification/data/bad1.txt'
+bad = './BinaryClassification/data/bad_waf.txt'
+
+**各种模式训练出来的结果：**
+type| logical regression| SVM|
+- | :-: | -: 
+K number (False)| 0.996 | 0.852 |
+K number (80) | 0.999|0.999
+K number (150)| 0.999|0.999
+## LSTM Sequence Classification
+## 模型方法
+目前很多研究表明，深度学习和神经网络在图像识别和自然语言处理（NLP）方面表现出众。可以可以利用神经网络的LSTM来处理这个分类问题。本方法是利用了基于Google的Tensorflow底层框架上的keras来做的模型。
+
+使用LSTM RNN二元分类法则意味着是在模型上应用监督学习算法。因此，训练数据集中的每个日志条目都需要有一个附带的标签来描述该记录的请求是正常的还是尝试注入攻击的。
+
+## 流程
+1. 文本进行预处理。将请求日志文本中的每个字符映射到字典的对应数字中。
+
+2. 采用LSTM进行数据传递。
+
+3. 最后通过全连接输出结果。
 
 
+## 参考文献
 
-# Sequence Classification
-
-0 =正常请求日志样本
-1 =请求日志表示尝试的注入攻击
-
-画一个流程图
-LSTM神经网络图
-
-paper：Adam: A Method for Stochastic Optimization
+Kingma D P, Ba J. Adam: A Method for Stochastic Optimization[J]. Computer Science, 2014.
 
 https://medium.com/slalom-engineering/detecting-malicious-requests-with-keras-tensorflow-5d5db06b4f28
-https://zhuanlan.zhihu.com/p/29768996
 
 http://keras-cn.readthedocs.io/en/latest/getting_started/sequential_model/
+
 http://keras-cn.readthedocs.io/en/latest/models/sequential/#sequential
+
 http://keras-cn.readthedocs.io/en/latest/layers/embedding_layer/#embedding_1
+
 http://deeplearning.net/tutorial/lstm.html
+
 https://blog.csdn.net/saltriver/article/details/63683092
+
 https://www.zhihu.com/question/27126057
+
 http://www.360doc.com/content/18/0301/04/52389397_733320586.shtml
