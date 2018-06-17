@@ -13,7 +13,7 @@ if __name__ == '__main__':
     parser.add_option('-k', '--kmeans', action="store", dest="kmeans", help="the number of kmeanss")
     options, args = parser.parse_args()
 
-    testfile = 'data/bad1.txt'
+    testfile = './BinaryClassification/data/bad1.txt'
     n_gram = 2
     use_keams = False
     k = 80

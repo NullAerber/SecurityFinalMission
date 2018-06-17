@@ -73,13 +73,13 @@ class BaseModel(object):
         print_time(self.get_name() + '在测试集上模型的准确度:{}'.format(self.classifier.score(X_test, Y_test)))
 
         # 保存训练结果
-        with open('model/' + self.get_name() + '.pickle', 'wb') as output:
+        with open('./BinaryClassification/model/' + self.get_name() + '.pickle', 'wb') as output:
             pickle.dump(self, output)
 
     def predict(self, X):
         # 加载模型
         try:
-            with open('model/' + self.get_name() + '.pickle', 'rb') as input:
+            with open('./BinaryClassification/model/' + self.get_name() + '.pickle', 'rb') as input:
                 self = pickle.load(input)
             print_time('加载 ' + self.get_name() + '模型成功')
         except FileNotFoundError:
@@ -140,7 +140,7 @@ class BaseModel(object):
 
             # 保存聚类的结果
             self.label = clf.labels_
-            with open('model/' + self.get_name() + '.label', 'w') as output:
+            with open('./BinaryClassification/model/' + self.get_name() + '.label', 'w') as output:
                 for i in self.label:
                     output.write(str(i) + ' ')
         print_time('kmeans 完成,聚成 ' + str(self.k) + '类')
@@ -213,9 +213,8 @@ if __name__ == '__main__':
     parser.add_option('-k', '--kmeans', action="store", dest="kmeans", help="the number of kmeanss")
     options, args = parser.parse_args()
 
-    good = 'data/good1.txt'
-    bad = 'data/bad1.txt'
-    # bad = 'data/bad_waf.txt'
+    good = './BinaryClassification/data/good_waf.txt'
+    bad = './BinaryClassification/data/bad_waf.txt'
 
     n_gram = 2
     use_keams = False
