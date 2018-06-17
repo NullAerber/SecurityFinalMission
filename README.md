@@ -68,17 +68,17 @@ $ python BinaryClassification/train.py [options]
 ### 训练结果
 训练均是默认训练集：
 
-good = './BinaryClassification/data/good_waf.txt'
+good = './BinaryClassification/data/good2.txt'
 
 bad = './BinaryClassification/data/bad_waf.txt'
 
-**各种模式训练出来的结果：**
+各种模式训练出来的结果：
 
 type| logical regression| SVM|
 - | :-: | -: 
 K number (False)| 0.996 | 0.852 |
-K number (80) | 0.999|0.999
-K number (150)| 0.999|0.999
+K number (80) | 0.999|0.999|
+K number (150)| 0.999|0.999|
 
 ### 预测
 
