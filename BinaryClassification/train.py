@@ -213,7 +213,7 @@ if __name__ == '__main__':
     parser.add_option('-k', '--kmeans', action="store", dest="kmeans", help="the number of kmeanss")
     options, args = parser.parse_args()
 
-    good = './BinaryClassification/data/good_waf.txt'
+    good = './BinaryClassification/data/good2.txt'
     bad = './BinaryClassification/data/bad_waf.txt'
 
     n_gram = 2

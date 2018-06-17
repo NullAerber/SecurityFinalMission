@@ -60,12 +60,12 @@ $ python BinaryClassification/train.py [options]
 -k 采用的话keams聚类到几类上
 ```
 
-### 模型结果
+### 模型文件
 .label文件保存的是分词结果，只与数据集有关
 
 .pickle文件是训练后的模型
 
-### 实验结果
+### 训练结果
 训练均是默认训练集：
 
 good = './BinaryClassification/data/good_waf.txt'
@@ -73,11 +73,32 @@ good = './BinaryClassification/data/good_waf.txt'
 bad = './BinaryClassification/data/bad_waf.txt'
 
 **各种模式训练出来的结果：**
+
 type| logical regression| SVM|
 - | :-: | -: 
 K number (False)| 0.996 | 0.852 |
 K number (80) | 0.999|0.999
 K number (150)| 0.999|0.999
+
+### 预测
+
+```
+$ python BinaryClassification/predict.py -h
+
+Usage: predict.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -f FILE, --file=FILE  data file
+  -c CLASSIFIER, --classifier=CLASSIFIER
+                        classifier type：'lg' or 'svm'
+  -n NGRAM, --ngram=NGRAM
+                        the number of n gram
+  -u USE, --use=USE     weather use keams
+  -k KMEANS, --kmeans=KMEANS
+                        the number of kmeanss
+```
+
 ## LSTM Sequence Classification
 ## 模型方法
 目前很多研究表明，深度学习和神经网络在图像识别和自然语言处理（NLP）方面表现出众。可以可以利用神经网络的LSTM来处理这个分类问题。本方法是利用了基于Google的Tensorflow底层框架上的keras来做的模型。
@@ -91,6 +112,39 @@ K number (150)| 0.999|0.999
 
 3. 最后通过全连接输出结果。
 
+## 训练
+```
+$ cd LSTM/
+$ python train.py -h
+Usage: train.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -f FILE, --file=FILE  data file
+```
+## 验证
+```
+$ python vali_dev.py -h
+Usage: vali_dev.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -f FILE, --file=FILE  data file
+```
+
+```
+$ python vali_waf.py -h
+Usage: vali_waf.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -g GOOD, --good=GOOD  good queries file
+  -b BAD, --bad=BAD     bad queries file
+```
+
+```
+$ python vali_signal_sample.py <you tested url>
+```
 
 ## 参考文献
 
