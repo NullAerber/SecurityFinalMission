@@ -1,6 +1,6 @@
 \section{基于LSTM序列模型分类}
 目前很多研究表明，深度学习和神经网络在图像识别和自然语言处理（NLP）方面表现出众。我们可以利用神经网络的NLP能力来处理这个分类问题。本方法是利用了Google的Tensorflow这个框架搭建相关模型，用相关数据集来判断此模型的正确率。基于LSTM序列模型分类的恶意URL检测算法如下：
-\begin{algorithm}[!h]
+\begin{algorithm}[!ht]
     \SetAlgoNoLine
     % \SetAlgoNoLine可以去掉竖线
     \caption{基于LSTM序列模型分类的恶意URL检测算法}
@@ -15,8 +15,8 @@
     validate and evaluate the predictions\;
 \end{algorithm}
 \subsection{预处理数据}
-本方法采用的文本数据是模拟API给出JSON形式的访问请求日志，样例请看(图\ref{fig:json_sample})。URL文本数据和标签（正常访问还是攻击行为）以|进行切分。对URL文本进行预处理时由于请求日志的内容包含各种字符串、符号和数字，因此，本方法将请求日志文本中的每个字符映射到字典中的数字。相关联的数字表示该字符出现的频率。这个字典是用训练数据来创建的。对于每一条URL，本方法设定固定字符长度为1024，对于小于1024长度的数据部分进行头部padding填充。预处理完毕之后的数据形式如下(图\ref{fig:vec2})：
-\begin{figure}[!h]
+本方法\cite{Sui2010Content}采用\cite{Zhang2013DTU}的文本数据是模拟API给出JSON形式的访问请求日志，样例请看(图\ref{fig:json_sample})。URL文本数据和标签（正常访问还是攻击行为）以|进行切分。对URL文本进行预处理时由于请求日志的内容包含各种字符串、符号和数字，因此，本方法将请求日志文本中的每个字符映射到字典中的数字。相关联的数字表示该字符出现的频率。这个字典是用训练数据来创建的。对于每一条URL，本方法设定固定字符长度为1024，对于小于1024长度的数据部分进行头部padding填充。预处理完毕之后的数据形式如下(图\ref{fig:vec2})：
+\begin{figure}[!ht]
     \setlength{\abovecaptionskip}{0.cm}
     \setlength{\belowcaptionskip}{-0.cm}
     \centering
@@ -26,8 +26,8 @@
 \end{figure}
 \subsection{模型构建}
 为了快速开发神经网络模型，本文选择使用运行在Tensorflow之上的高级框架Keras API。通过使用Keras为Tensorflow提供的样板设置，我们能够快速构建起模型原型。
-\\\indent{}模型的结构如下(图\ref{fig:LSTM})显示
-\begin{figure}[!h]
+\\\indent{}模型的结构如下(图\ref{fig:LSTM})显示：
+\begin{figure}[!ht]
     \setlength{\abovecaptionskip}{0.cm}
     \setlength{\belowcaptionskip}{-0.cm}
     \centering
@@ -40,7 +40,29 @@
 \\\indent{}第三层则是模型主要部分LSTM部分，LSTM隐藏层则由64个神经元以及循环状态的线性变换中神经元断开比例为50\%。
 \\\indent{}最后第五层则是全连接层，并用一个sigmoid激活函数进行约束，以产生0\~1之间的分类置信度。
 \subsection{训练模型}
-得到了LSTM的模型实例和处理过的数据，标签后，需要将数据集分为训练集和测试集。训练集占了所有数据集合的$75\%$，测试集是$25\%$。训练三次，每进行梯度下降时batch包含的样本数为128
+得到了LSTM的模型实例和处理过的数据，标签后，需要将数据集分为训练集和测试集。训练集占了所有数据集合的$75\%$，验证集是$25\%$。训练三次，每进行梯度下降时batch包含的样本数为128。最后的训练结果如如下(图\ref{fig:LSTM_train})显示：
+\begin{figure}[!ht]
+    \setlength{\abovecaptionskip}{0.cm}
+    \setlength{\belowcaptionskip}{-0.cm}
+    \centering
+     \includegraphics[scale=0.5]{Figs/LSTM_train.png}
+    \caption{LSTM模型网络训练结果}
+    \label{fig:LSTM_train}
+\end{figure}
 \subsection{测试模型}
-经过训练之后使用classifier的score选择一批测试数据来计算模型的准确度，测试数据（x\_test,y\_test）我们已经在上一步中分割得到。
-% \\\indent{}
+进过训练之后，将模型对另外两个数据集进行测试，得到如下(表\ref{table:lstm_test})测试结果：
+\begin{table}[!ht]
+    \setlength{\abovecaptionskip}{0.cm}
+    \setlength{\belowcaptionskip}{-0.cm}
+    \caption{LSTM训练后模型测试结果}
+    \centering
+    \label{table:lstm_test}    
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        &json数据&普通URL&FWaf项目\\
+        \hline
+        Accuracy&0.9216&0.5141&0.8057\\
+        \hline
+    \end{tabular}
+\end{table}
+\\\indent{}模型的结果在json数据格式上能过达到95\%以上的正确率，但是用到直接的URL上效果就不是那么好了，可能是数据文本形态的不同所导致的结果。

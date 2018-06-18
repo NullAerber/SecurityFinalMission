@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b7b5b79-b27a-4464-8d9e-981bd631dfa9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/LSTM/vali_waf.py" beforeDir="false" afterPath="$PROJECT_DIR$/LSTM/vali_waf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper/Sections/section05.tex" beforeDir="false" afterPath="$PROJECT_DIR$/paper/Sections/section05.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/paper/main.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/paper/main.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/paper/main.synctex.gz" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +22,7 @@
       <file leaf-file-name="vali_dev.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LSTM/vali_dev.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-254">
+            <state relative-caret-position="-231">
               <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
             </state>
           </provider>
@@ -28,10 +31,33 @@
       <file leaf-file-name="vali_waf.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LSTM/vali_waf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
+            <state relative-caret-position="-366">
               <caret line="23" column="97" selection-start-line="23" selection-start-column="97" selection-end-line="23" selection-end-column="97" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bad_waf.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LSTM/data/bad_waf.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bad.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LSTM/data/bad.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="3" selection-start-column="3" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="good_waf.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LSTM/data/good_waf.txt">
+          <provider selected="true" editor-type-id="LargeFileEditor" />
         </entry>
       </file>
     </leaf>
@@ -93,6 +119,8 @@
         <option value="$PROJECT_DIR$/LSTM/Untitled.ipynb" />
         <option value="$PROJECT_DIR$/LSTM/test.py" />
         <option value="$PROJECT_DIR$/LSTM/data/good2.txt" />
+        <option value="$PROJECT_DIR$/LSTM/data/bad.txt" />
+        <option value="$PROJECT_DIR$/LSTM/data/good.txt" />
         <option value="$PROJECT_DIR$/LSTM/vali_waf.py" />
       </list>
     </option>
@@ -155,6 +183,12 @@
               <item name="SecurityFinalMission" type="b2602c69:ProjectViewProjectNode" />
               <item name="SecurityFinalMission" type="462c0819:PsiDirectoryNode" />
               <item name="LSTM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SecurityFinalMission" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SecurityFinalMission" type="462c0819:PsiDirectoryNode" />
+              <item name="LSTM" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SecurityFinalMission" type="b2602c69:ProjectViewProjectNode" />
@@ -300,15 +334,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="4" width="1366" height="764" extended-state="7" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18493661" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18493661" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290938" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290938" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3290938" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.3290938" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3290938" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3290938" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.36565977" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -358,23 +391,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/lib/python3.6/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5544">
-          <caret line="308" selection-start-line="308" selection-end-line="308" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BinaryClassification/train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3870">
-          <caret line="215" column="46" selection-start-line="215" selection-start-column="46" selection-end-line="215" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BinaryClassification/predict.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -687,9 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LSTM/data/bad.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/LSTM/data/good1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -717,13 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LSTM/vali_dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-254">
-          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LSTM/data/bad_waf.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -731,9 +737,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/LSTM/data/bad.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LSTM/data/good.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LSTM/data/good_waf.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LSTM/vali_dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-231">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/LSTM/vali_waf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
+        <state relative-caret-position="-366">
           <caret line="23" column="97" selection-start-line="23" selection-start-column="97" selection-end-line="23" selection-end-column="97" />
         </state>
       </provider>

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2018.6.14)  18 JUN 2018 16:02
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2018.6.14)  18 JUN 2018 20:26
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1313,6 +1313,11 @@ s
 \f@nch@O@olf=\skip71
 \f@nch@O@orf=\skip72
 )
+(/usr/share/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
 (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -1802,7 +1807,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ] (./Sections/section01.tex) (./Sections/section02.tex [2])
 (./Sections/section03.tex
-Underfull \hbox (badness 10000) in paragraph at lines 17--19
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
 []\TU/ptm/bx/n/10.53937 Logistic \TU/FandolSong-Regular(1)/m/n/10.53937 回 归 是 一
  种 广 义 线 性 回 归
  []
@@ -1811,15 +1816,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--19
 Underfull \vbox (badness 5147) has occurred while \output is active []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.53937> on input line 31.
+(Font)              <10.53937> on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 31.
+(Font)              <7> on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 31.
+(Font)              <5> on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.52812> on input line 31.
+(Font)              <7.52812> on input line 30.
 
-Underfull \hbox (badness 1796) in paragraph at lines 31--31
+Underfull \hbox (badness 1796) in paragraph at lines 30--30
 [][]\TU/ptm/m/n/7.52812 bad-waf.txt\TU/FandolSong-Regular(0)/m/n/7.52812 ，| \TU
 /ptm/m/n/7.52812 good-waf.txt\TU/FandolSong-Regular(0)/m/n/7.52812 ：|  来 自 于 \T
 U/ptm/m/n/7.52812 Fwaf-Machine-Learning-
@@ -1837,80 +1842,81 @@ LaTeX Font Warning: Font shape `TU/ptm/m/it' undefined
 (Font)              using `TU/ptm/m/n' instead on input line 16.
 
 [4]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
 File: Figs/vec.png Graphic file (type bmp)
 <Figs/vec.png>
- [5]) (./Sections/section05.tex
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [6] (./Sections/section05.tex
+
+LaTeX Warning: Citation `Sui2010Content' on page 7 undefined on input line 18.
+
+
+LaTeX Warning: Citation `Zhang2013DTU' on page 7 undefined on input line 18.
 
 File: Figs/vec2.png Graphic file (type bmp)
 <Figs/vec2.png>
-
-Underfull \vbox (badness 1248) has occurred while \output is active []
-
- [6]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+[7]
 File: Figs/lstm.png Graphic file (type bmp)
 <Figs/lstm.png>
+File: Figs/LSTM_train.png Graphic file (type bmp)
+<Figs/LSTM_train.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7])
-(./Sections/Conclusion.tex) (./Sections/references.tex
-Underfull \hbox (badness 1917) in paragraph at lines 3--4
-[]\TU/FandolSong-Regular(1)/m/n/10.53937 蔡 文\TU/ptm/m/it/10.53937 . \TU/FandolS
-ong-Regular(0)/m/it/10.53937 可 拓 论 及 其 应 用 \TU/ptm/m/it/10.53937 [J]. \TU/Fando
-lSong-Regular(1)/m/n/10.53937 科 学 通 报\TU/ptm/m/it/10.53937 ,
+Overfull \hbox (0.83107pt too wide) in paragraph at lines 60--67
+ [][] 
  []
 
+) [8] (./Sections/Conclusion.tex) (./Sections/Future.tex [9]) (./main.bbl
+./main.bbl:12: Misplaced alignment tab character &.
+l.12 \newblock {\em Computer Engineering &
+                                           Applications}, 2013.
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
-Underfull \hbox (badness 1009) in paragraph at lines 3--4
-\TU/ptm/m/it/10.53937 Cai Wen. Extension Theory and Its Ap-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-\TU/ptm/m/it/10.53937 plication[J]. Chinese Science Bulletin,
- []
-
-
-Underfull \hbox (badness 3219) in paragraph at lines 4--6
-\TU/ptm/m/it/10.53937 Cai Wen\TU/FandolSong-Regular(1)/m/n/10.53937 ，| \TU/ptm/
-m/it/10.53937 Yang Chun-yan\TU/FandolSong-Regular(1)/m/n/10.53937 ，| \TU/ptm/m/
-it/10.53937 Lin Wei-chu.
- []
-
-
-Underfull \hbox (badness 3039) in paragraph at lines 6--8
-\TU/ptm/m/it/10.53937 Cao Bing-yuan. Matter element analysis
- []
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 16--18
-\TU/ptm/m/it/10.53937 http://read.dayoo.com/book/content-10824-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--18
-\TU/ptm/m/it/10.53937 http://read.dayoo.com/book/content-10824-
- []
-
-) 
+) (./Sections/acknowledgements.tex) 
 AED: lastpage setting LastPage
-[9] (./main.aux)
+
+Underfull \hbox (badness 1348) in paragraph at lines 2--54
+[]\TU/FandolSong-Regular(1)/m/n/10.53937 此 项 目 已 经 上 传 \TU/ptm/m/it/10.53937 Gi
+thub \TU/FandolSong-Regular(1)/m/n/10.53937 公 开 仓 库，|  故
+ []
+
+
+Underfull \hbox (badness 3942) in paragraph at lines 2--54
+\TU/FandolSong-Regular(1)/m/n/10.53937 相 关 源 代 码 不 再 作 为 附 录 赘 述，|  请 通 过
+ []
+
+
+Overfull \hbox (16.8788pt too wide) in paragraph at lines 2--54
+\TU/ptm/m/it/10.53937 https://github.com/NullAerber/SecurityFinalMission
+ []
+
+[10] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 32182 strings out of 493007
- 692478 string characters out of 6140075
- 695991 words of memory out of 5000000
- 35736 multiletter control sequences out of 15000+600000
+ 32261 strings out of 493007
+ 692641 string characters out of 6140075
+ 697849 words of memory out of 5000000
+ 35805 multiletter control sequences out of 15000+600000
  532370 words of font info for 49 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,11n,76p,10480b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (9 pages).
+Output written on main.pdf (10 pages).
