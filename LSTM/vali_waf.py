@@ -21,7 +21,7 @@ def predict(goodqueries, badqueries):
     tokenizer.fit_on_texts(dict)
 
     # 加载waf项目的数据
-    df_white = pandas.read_csv(goodqueries, engine='python', sep='!@#$%^&*', header=0).sample(n=50000)
+    df_white = pandas.read_csv(goodqueries, engine='python', sep='!@#$%^&*', header=0).sample(n=10000)
     df_black = pandas.read_csv(badqueries, engine='python', sep='!@#$%^&*', header=0)
     df_white['label'] = 0
     df_black['label'] = 1
@@ -58,8 +58,8 @@ if __name__ == '__main__':
     parser.add_option('-b', '--bad', action="store", dest="bad", help="bad queries file")
     options, args = parser.parse_args()
 
-    good_file = 'data/good_waf.txt'
-    bad_file = 'data/bad_waf.txt'
+    good_file = 'data/good.txt'
+    bad_file = 'data/bad.txt'
 
     if options.good is not None:
         good_file = options.good

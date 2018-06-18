@@ -1,3 +1,4 @@
+url
 /skypearl/cn/skypearlgetprovince.action
 /skypearl/cn/styles/images/ui-bg_glass_75_dadada_1x400.png
 /cn/scripts/common.js?tcdsp
