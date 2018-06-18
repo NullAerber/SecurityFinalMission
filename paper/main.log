@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2018.6.14)  18 JUN 2018 20:26
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2018.6.14)  18 JUN 2018 20:47
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1790,10 +1790,14 @@ LaTeX Font Warning: Font shape `TU/ptm/bx/n' undefined
 LaTeX Warning: Optional argument of \twocolumn too tall on page 1.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \vbox (13.62956pt too high) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Warning: Text page 1 contains only floats.
+
+
+Overfull \vbox (13.62956pt too high) has occurred while \output is active []
 
 
 
@@ -1870,7 +1874,24 @@ Overfull \hbox (0.83107pt too wide) in paragraph at lines 60--67
  [][] 
  []
 
-) [8] (./Sections/Conclusion.tex) (./Sections/Future.tex [9]) (./main.bbl
+) [8] (./Sections/Conclusion.tex) (./Sections/Future.tex [9])
+(./Sections/acknowledgements.tex)
+Underfull \hbox (badness 1348) in paragraph at lines 2--41
+[]\TU/FandolSong-Regular(1)/m/n/10.53937 此 项 目 已 经 上 传 \TU/ptm/bx/n/10.53937 Gi
+thub \TU/FandolSong-Regular(1)/m/n/10.53937 公 开 仓 库，|  故
+ []
+
+
+Underfull \hbox (badness 3942) in paragraph at lines 2--41
+\TU/FandolSong-Regular(1)/m/n/10.53937 相 关 源 代 码 不 再 作 为 附 录 赘 述，|  请 通 过
+ []
+
+
+Overfull \hbox (16.8788pt too wide) in paragraph at lines 2--41
+\TU/ptm/bx/n/10.53937 https://github.com/NullAerber/SecurityFinalMission
+ []
+
+(./main.bbl
 ./main.bbl:12: Misplaced alignment tab character &.
 l.12 \newblock {\em Computer Engineering &
                                            Applications}, 2013.
@@ -1881,24 +1902,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-) (./Sections/acknowledgements.tex) 
+) 
 AED: lastpage setting LastPage
-
-Underfull \hbox (badness 1348) in paragraph at lines 2--54
-[]\TU/FandolSong-Regular(1)/m/n/10.53937 此 项 目 已 经 上 传 \TU/ptm/m/it/10.53937 Gi
-thub \TU/FandolSong-Regular(1)/m/n/10.53937 公 开 仓 库，|  故
- []
-
-
-Underfull \hbox (badness 3942) in paragraph at lines 2--54
-\TU/FandolSong-Regular(1)/m/n/10.53937 相 关 源 代 码 不 再 作 为 附 录 赘 述，|  请 通 过
- []
-
-
-Overfull \hbox (16.8788pt too wide) in paragraph at lines 2--54
-\TU/ptm/m/it/10.53937 https://github.com/NullAerber/SecurityFinalMission
- []
-
 [10] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1911,10 +1916,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 32261 strings out of 493007
- 692641 string characters out of 6140075
+ 32208 strings out of 493007
+ 688440 string characters out of 6140075
  697849 words of memory out of 5000000
- 35805 multiletter control sequences out of 15000+600000
+ 35752 multiletter control sequences out of 15000+600000
  532370 words of font info for 49 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,11n,76p,10480b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
