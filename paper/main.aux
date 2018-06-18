@@ -13,9 +13,9 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}课题目的}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}课题流程}{3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}整体流程}{3}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}基于逻辑回归}{4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}基于SVM}{4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}基于LSTM}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}基于Logical Regression逻辑回归}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}基于SVM支持向量机}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}基于LSTM序列模型}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}课题数据来源}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 恶意URL部分样例}}{4}}
 \newlabel{fig:bad_sample}{{1}{4}}
@@ -24,33 +24,46 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces API模拟json请求数据部分样例}}{4}}
 \newlabel{fig:json_sample}{{3}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.}基于二分类机器学习}{5}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces 二分类机器学习算法}}{5}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces 基于二分类机器学习恶意URL检测算法}}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}数据向量化}{5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces URL向量化后的部分样例}}{5}}
 \newlabel{fig:vec}{{4}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}训练模型}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}测试模型}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}实验结果对比}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces lg和svm分类器训练结果}}{6}}
+\newlabel{table:no_keams}{{1}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}模型结构改进}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces svm分类器加入Kmeans降维训练后结果}}{6}}
+\newlabel{table:svm_use}{{2}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces lg分类器加入Kmeans降维训练后结果}}{6}}
+\newlabel{table:lg_use}{{3}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.}基于LSTM序列模型分类}{6}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces 基于LSTM序列模型分类的恶意URL检测算法}}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}预处理数据}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Json URL向量化后的部分样例}}{7}}
+\newlabel{fig:vec2}{{5}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}模型构建}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces LSTM模型网络结构}}{7}}
+\newlabel{fig:LSTM}{{6}{7}}
 \citation{ref07}
 \citation{ref05}
 \citation{ref06}
 \citation{ref03}
 \citation{ref04}
 \bibcite{ref01}{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}测试模型}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}实验结果对比}{6}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces lg和svm分类器训练结果}}{6}}
-\newlabel{table:no_keams}{{1}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}模型结构改进}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Logical Regression逻辑回归}{6}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.}结论}{6}}
 \bibcite{ref02}{2}
 \bibcite{ref03}{3}
 \bibcite{ref04}{4}
 \bibcite{ref05}{5}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}训练模型}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}测试模型}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.}结论}{8}}
 \bibcite{ref06}{6}
 \bibcite{ref07}{7}
 \bibcite{ref08}{8}
 \bibcite{ref09}{9}
 \bibcite{ref10}{10}
-\newlabel{LastPage}{{}{7}}
-\xdef\lastpage@lastpage{7}
+\newlabel{LastPage}{{}{9}}
+\xdef\lastpage@lastpage{9}
 \gdef\lastpage@lastpageHy{}

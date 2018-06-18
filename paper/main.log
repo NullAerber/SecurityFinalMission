@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2018.6.14)  18 JUN 2018 13:41
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2018.6.14)  18 JUN 2018 16:02
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1834,19 +1834,31 @@ File: Figs/json.png Graphic file (type bmp)
 ) (./Sections/section04.tex
 
 LaTeX Font Warning: Font shape `TU/ptm/m/it' undefined
-(Font)              using `TU/ptm/m/n' instead on input line 17.
+(Font)              using `TU/ptm/m/n' instead on input line 16.
 
 [4]
 File: Figs/vec.png Graphic file (type bmp)
 <Figs/vec.png>
+ [5]) (./Sections/section05.tex
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: Figs/vec2.png Graphic file (type bmp)
+<Figs/vec2.png>
 
 Underfull \vbox (badness 1248) has occurred while \output is active []
 
- [5]
+ [6]
 
-LaTeX Warning: Reference `table:use' on page 6 undefined on input line 63.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./Sections/Conclusion.tex) (./Sections/references.tex [6]
+File: Figs/lstm.png Graphic file (type bmp)
+<Figs/lstm.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7])
+(./Sections/Conclusion.tex) (./Sections/references.tex
 Underfull \hbox (badness 1917) in paragraph at lines 3--4
 []\TU/FandolSong-Regular(1)/m/n/10.53937 蔡 文\TU/ptm/m/it/10.53937 . \TU/FandolS
 ong-Regular(0)/m/it/10.53937 可 拓 论 及 其 应 用 \TU/ptm/m/it/10.53937 [J]. \TU/Fando
@@ -1875,7 +1887,7 @@ Underfull \hbox (badness 3039) in paragraph at lines 6--8
 \TU/ptm/m/it/10.53937 Cao Bing-yuan. Matter element analysis
  []
 
-
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 16--18
 \TU/ptm/m/it/10.53937 http://read.dayoo.com/book/content-10824-
  []
@@ -1887,21 +1899,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--18
 
 ) 
 AED: lastpage setting LastPage
-[7] (./main.aux)
+[9] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 32158 strings out of 493007
- 691478 string characters out of 6140075
- 695959 words of memory out of 5000000
- 35717 multiletter control sequences out of 15000+600000
+ 32182 strings out of 493007
+ 692478 string characters out of 6140075
+ 695991 words of memory out of 5000000
+ 35736 multiletter control sequences out of 15000+600000
  532370 words of font info for 49 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,11n,76p,10480b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (7 pages).
+Output written on main.pdf (9 pages).

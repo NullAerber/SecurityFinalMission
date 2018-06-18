@@ -1,14 +1,13 @@
 \section{基于二分类机器学习}
-二分类机器学习的算法有很多，常见的有逻辑回归logical regression(lg)和支持向量机svm。本次课题选择这两种分类模型探究识别恶意URL的课题。
-总的一个算法如下：
+二分类机器学习的算法有很多，常见的有逻辑回归logical regression(lg)和支持向量机svm。本次课题选择这两种分类模型探究识别恶意URL的课题。基于二分类机器学习恶意URL检测算法如下：
 \begin{algorithm}[!h]
     \SetAlgoNoLine
     % \SetAlgoNoLine可以去掉竖线
-    \caption{二分类机器学习算法}
+    \caption{基于二分类机器学习恶意URL检测算法}
     \KwIn{URL Text}
     \KwOut{The Evaluate and Prediction Outputs}
     initialization\;
-    load data\;
+    load data\; 
     spilt URL text into words\;
     vectorize the words to get the feature matrix\;
     split the data into training set and validating set\;
@@ -19,14 +18,15 @@
         }
     train training set\;
     validate and evaluate the prediction\;
-    
 \end{algorithm}
 \subsection{数据向量化}
 无论是恶意请求数据集还是正常请求数据集，都是不定长的字符串列表，很难直接用逻辑回归算法对这些不规律的数据进行处理，所以，需要找到这些文本的数字特征，用来训练我们的检测模型。
 \\\indent{}在这里，我们使用 TD-IDF 来作为文本的特征，并以数字矩阵的形式进行输出。TD-IDF 是一种用于资讯检索与文本挖掘的常用加权技术，被经常用于描述文本特征。TF表示词条在某文档中出现的频率。IDF表示的是如果包含词条的文档越少，则IDF越大，说明该词条具有很好的类别区分能力。TF-IDF倾向于过滤掉常见的词语，保留重要的词语。
 \\\indent{}TD-IDF输入的是文本的词语，所我们需要将url分词。我们选择通过长度为N的滑动窗口将文本分割为N-Gram序列。n越大，产生的字母组合种类越多，产生的向量维度会更大，运算开销会增大，考虑到服务器的性能，这里我们选择n=2。
-\\\indent{}经过分词，再TD-IDF处理，我们得到url的特征矩阵。输出格式是：
+\\\indent{}经过分词，再TD-IDF处理，我们得到url的特征矩阵。输出格式如下(表\ref{fig:vec})：
 \begin{figure}[!h]
+    \setlength{\abovecaptionskip}{0.cm}
+    \setlength{\belowcaptionskip}{-0.cm}
     \centering
      \includegraphics[scale=0.55]{Figs/vec.png}
     \caption{URL向量化后的部分样例}
@@ -38,13 +38,16 @@
 \subsection{测试模型}
 经过训练之后使用classifier的score选择一批测试数据来计算模型的准确度，测试数据（x\_test,y\_test）我们已经在上一步中分割得到。
 \subsection{实验结果对比}
-实验训练均采用默认训练集：
+实验训练均采用默认数据集：
 \begin{itemize}
     \item goodfile='good2.txt'
     \item badfile='bad\_waf.txt'
+    \item testfile='good1.txt'
 \end{itemize}
-采用lg和SVM方法得到的正确率如下(表 \ref{table:no_keams})
+\ \ \ \ 采用lg和SVM方法得到的训练集正确率和测试集正确率如下(表 \ref{table:no_keams})
 \begin{table}[!ht]
+    \setlength{\abovecaptionskip}{0.cm}
+    \setlength{\belowcaptionskip}{-0.cm}
     \caption{lg和svm分类器训练结果}
     \centering
     \label{table:no_keams}    
@@ -54,13 +57,46 @@
         \hline
         Training Accuracy&0.9987&0.9632\\
         \hline
+        Testing Accuracy&0.9974&0.8013\\
+        \hline
     \end{tabular}
 \end{table}
 \subsection{模型结构改进}
 可见lg分类模型对URL的识别相比svm更加精确，整体样本是70052个，误差上多了2486个，而且训练时间也长于lg分类器。
-\\\indent{}对于这种情况，我们经过分析，查阅资料后发现，svm对数据的异常点（离群值）比较敏感，因为其训练只需要支持向量，有效样本本来就不高，一旦被干扰，预测结果难以预料。同时一般输入svm的数据维度不宜太高，而我们训练的数据集有4117维，所以决定在处理前加入降维模块。 
-\\\indent{}我们选择用kmeans降维。该算法的主要思想是通过迭代过程把数据集划分为不同的类别，使得评价聚类性能的准则函数达到最优，从而使生成的每个聚类内紧凑，类间独立。 
-下(表 \ref{table:use})是对于svm选择80维和150维聚类，加入降维后的结果： 
-
-\subsection{Logical Regression逻辑回归}
-% \\\indent{}
+\\\indent{}对于这种情况，经过分析和查阅资料后发现，svm对数据的异常点（离群值）比较敏感，因为其训练只需要支持向量，有效样本本来就不高，一旦被干扰，预测结果难以预料。同时一般输入svm的数据维度不宜太高，而本文训练的数据集有4117维，所以决定在处理前加入降维模块。 
+\\\indent{}本文选择用kmeans降维。该算法的主要思想是通过迭代过程把数据集划分为不同的类别，使得评价聚类性能的准则函数达到最优，从而使生成的每个聚类内部紧凑，类间独立。 
+\\\indent{}(表 \ref{table:svm_use})是对于svm选择80维和150维聚类，加入降维后的结果： 
+\begin{table}[!ht]
+    \setlength{\abovecaptionskip}{0.cm}
+    \setlength{\belowcaptionskip}{-0.cm}
+    \caption{svm分类器加入Kmeans降维训练后结果}
+    \centering
+    \label{table:svm_use}    
+    \begin{tabular}{|c|c|c|}
+        \hline
+        &80维&150维\\
+        \hline
+        Training Accuracy&0.9931&0.9913\\
+        \hline
+        Testing Accuracy&0.9847&0.9854\\
+        \hline
+    \end{tabular}
+\end{table}
+\\\indent{}可见，对数据降维后svm运行的速度和正确率都大大提升了，说明加入降维之后是有效果的。
+\\\indent{}那么对于lg分类器来说，是不是加入聚类之后效果也有提升呢？根据(表 \ref{table:lg_use})来看，结果没有太大变化，甚至相对于原来的正确率有所下降，可见不同模型有不同的模型优化方法，算法的使用场景不是完全相同的。
+\begin{table}[!ht]
+    \setlength{\abovecaptionskip}{0.cm}
+    \setlength{\belowcaptionskip}{-0.cm}
+    \caption{lg分类器加入Kmeans降维训练后结果}
+    \centering
+    \label{table:lg_use}    
+    \begin{tabular}{|c|c|c|}
+        \hline
+        &80维&150维\\
+        \hline
+        Training Accuracy&0.9963&0.9979\\
+        \hline
+        Testing Accuracy&0.9949&0.9943\\
+        \hline
+    \end{tabular}
+\end{table}
