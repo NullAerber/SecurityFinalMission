@@ -75,7 +75,7 @@ bad = './BinaryClassification/data/bad_waf.txt'
 各种模式训练出来的结果：
 
 type| logical regression| SVM
-- | :-: | -: 
+- | :-: | :-: 
 K number (False)| 0.9987866676182999 | 0.9632431660837913 
 K number (80) | 0.9963600028548997|0.9930768681750054
 K number (150)| 0.9979301977018057|0.9912925558489758
@@ -145,23 +145,3 @@ Options:
 ```
 $ python vali_signal_sample.py <you tested url>
 ```
-
-## 参考文献
-
-Kingma D P, Ba J. Adam: A Method for Stochastic Optimization[J]. Computer Science, 2014.
-
-https://medium.com/slalom-engineering/detecting-malicious-requests-with-keras-tensorflow-5d5db06b4f28
-
-http://keras-cn.readthedocs.io/en/latest/getting_started/sequential_model/
-
-http://keras-cn.readthedocs.io/en/latest/models/sequential/#sequential
-
-http://keras-cn.readthedocs.io/en/latest/layers/embedding_layer/#embedding_1
-
-http://deeplearning.net/tutorial/lstm.html
-
-https://blog.csdn.net/saltriver/article/details/63683092
-
-https://www.zhihu.com/question/27126057
-
-http://www.360doc.com/content/18/0301/04/52389397_733320586.shtml
