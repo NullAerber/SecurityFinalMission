@@ -11,8 +11,3 @@ LSTM/*.csv
 
 BinaryClassification/model
 BinaryClassification/predict.csv
-
-
-*.docx
-
-*.pdf
