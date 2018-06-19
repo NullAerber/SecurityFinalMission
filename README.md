@@ -75,7 +75,7 @@ bad = './BinaryClassification/data/bad_waf.txt'
 各种模式训练出来的结果：
 
 type| logical regression| SVM
-- | :-: | :-: 
+----|------|----
 K number (False)| 0.9987866676182999 | 0.9632431660837913 
 K number (80) | 0.9963600028548997|0.9930768681750054
 K number (150)| 0.9979301977018057|0.9912925558489758
